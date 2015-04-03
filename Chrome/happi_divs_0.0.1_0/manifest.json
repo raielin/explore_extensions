@@ -1,0 +1,42 @@
+{
+  "name": "HappiDivs",
+  "version": "0.0.1",
+  //check official chrome documentation for current manifest version: https://developer.chrome.com/extensions/manifestVersion
+  "manifest_version": 2,
+  "description": "Make our divs happy and colorful!",
+  "icons": {
+    "16": "icons/16x16.png",
+    "48": "icons/48x48.png",
+    "128": "icons/128x128.png"
+  },
+  // omnibox is the keyword for the extension which, when typed into address bar, will implement code inside your background script
+  "omnibox": {
+    "keyword": "yeah"
+  },
+  // with browser action, an extension icon will be placed to the right of the address bar that will open up a pop-up window loaded with HTML and scripts for the extension.
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/19x19.png",
+      "38": "icons/38x38.png"
+    },
+    "default_title": "make happi divs",
+    "default_popup": "browseraction/popup.html"
+  },
+  // run an event driven background page so it is active only when it is needed and is not persistent.
+  // background page is where main logic and initialization resides, connecting other parts of the extension
+  "background": {
+    "scripts": ["background.js"],
+    // use event page for background
+    "persistent": false
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab/newtab.html"
+  },
+  // content scripts run code within the current web page providing access to the current page's DOM.
+  // read more about match patterns: https://developer.chrome.com/extensions/match_patterns
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content.js"]
+    }],
+    "devtools_page": "devtools/devtools.html"
+}

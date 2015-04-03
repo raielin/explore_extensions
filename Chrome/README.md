@@ -11,21 +11,33 @@ Sample extensions, practice code, and general notes and instructions for creatin
 **manifest.json**
 * Entry point of extension. Required properties: `name`, `version`, and `manifest_version`.
 
-**background pages**
+**Background Pages**
 * Every extension has an invisible background page that is run by browser.
 * Recommendation is to use an event page as a background page, as opposed to a persistent background which is active continually.
 * Holds extension's main logic and initialization - acts like a bridge between other parts of the extension
 
-**content script**
+**Content Script**
 * Gives access to current page's DOM.
 * Runs code within context of current page and will be executed with every page refresh.
 
-**user interface**
+**User Interface**
 * Multiple options to build extension UI.
     - Browser Action
     - Page Action
     - DeveloperTools (allows you to add new tab to Chrome's native DeveloperTools)
     - Omnibox
+
+###Additional Accessible Features
+**Chrome API**
+* Look at [documentation](https://developer.chrome.com/extensions/api_index.html).
+* Gives access to Chrome bookmarks, history, ability to create tabs, resize windows, etc.
+
+**Messaging**
+* Can get information about current page's DOM and use it inside the extension's background script.
+* One-time requests or long-lived connections both available.
+
+**Override Pages**
+* Nice way to customize your browser - can substitute some of Chrome's default pages, i.e. New Tab, History, Bookmarks, etc.
 
 ###Loading Extension for Testing
 * Go to `chrome://extensions` in Chrome browser.

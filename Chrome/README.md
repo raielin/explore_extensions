@@ -32,8 +32,11 @@ Sample extensions, practice code, and general notes and instructions for creatin
 * Look at [documentation](https://developer.chrome.com/extensions/api_index.html).
 * Gives access to Chrome bookmarks, history, ability to create tabs, resize windows, etc.
 
-**Messaging**
-* Can get information about current page's DOM and use it inside the extension's background script.
+**Message Passing**
+* Way for content scripts (sends message) and background scripts (listens for message) to interact. 
+* Content script pulls information from current page's DOM via sends message to background script to do something with it.
+    - content scripts have access to current page, but cannot listen for clicks on browser action
+    - background scripts have access to every Chrome API but cannot access current page.
 * One-time requests or long-lived connections both available.
 
 **Override Pages**

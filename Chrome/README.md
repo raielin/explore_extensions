@@ -22,7 +22,7 @@ Sample extensions, practice code, and general notes and instructions for creatin
 
 **User Interface**
 * Multiple options to build extension UI.
-    - Browser Action
+    - Browser Action - icon button next to address bar that allows extension to listen for clicks on that button and then do something.
     - Page Action
     - DeveloperTools (allows you to add new tab to Chrome's native DeveloperTools)
     - Omnibox
@@ -46,6 +46,7 @@ Sample extensions, practice code, and general notes and instructions for creatin
 * Select extension project folder.
 
 ###References & Resources
-* Google's developer page: https://developer.chrome.com/extensions.
+* https://developer.chrome.com/extensions
 * http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076 (5 Jul 2013)
+* https://robots.thoughtbot.com/how-to-make-a-chrome-extension (23 Jan 2015)
 

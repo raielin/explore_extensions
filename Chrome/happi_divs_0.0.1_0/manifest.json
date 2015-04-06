@@ -11,7 +11,7 @@
   },
   // omnibox is the keyword for the extension which, when typed into address bar, will implement code inside your background script
   "omnibox": {
-    "keyword": "yeah"
+    "keyword": "happi"
   },
   // with browser action, an extension icon will be placed to the right of the address bar that will open up a pop-up window loaded with HTML and scripts for the extension.
   "browser_action": {

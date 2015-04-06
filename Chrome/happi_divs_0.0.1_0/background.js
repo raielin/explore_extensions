@@ -7,7 +7,7 @@ chrome.omnibox.onInputChanged.addListener(
     suggest([
       {
         content: "color-divs",
-        description: "Make everything happi!"
+        description: "Make divs happi!"
       }
     ]);
   }

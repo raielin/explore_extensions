@@ -11,15 +11,36 @@
 
 // Listen for message from background.js
 // only run code inside listener when payload is received.
+// simple version - no message being sent back to background.js
+// chrome.runtime.onMessage.addListener(
+//   function(request, sender, sendResponse) {
+//     if(request.message === "clicked_browser_action") {
+//       var firstHref = $("a[href^='http']").eq(0).attr("href");
+//       var activate = window.confirm("link-IT to " + firstHref + "?");
+//       if (activate) {
+//         console.log("link-IT!");
+//       } else {
+//         console.log("nada.");
+//       }
+//     }
+//   }
+// );
+
+// Listening for message from background.js that indicates we should pull the first URL from the current page
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    if(request.message === "clicked_browser_action") {
-      var firstHref = $("a[href^='http']").eq(0).attr("href");
+    if (request.message === "clicked_browser_action") {
+      var firstHref = $("a[href^='http'").eq(0).attr("href");
       var activate = window.confirm("link-IT to " + firstHref + "?");
+
+      // If user confirms activation, send message back to background.js to open new tab with URL from current page
       if (activate) {
-        console.log("link-IT!");
+        chrome.runtime.sendMessage({
+          "message": "open_new_tab",
+          "url": firstHref
+        });
       } else {
-        console.log("nada.");
+        alert("Fine. Nevermind.");
       }
     }
   }

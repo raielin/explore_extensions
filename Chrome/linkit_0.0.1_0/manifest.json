@@ -4,5 +4,9 @@
 {
   "manifest_version": 2,
   "name": "link-IT!",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+  }]
 }

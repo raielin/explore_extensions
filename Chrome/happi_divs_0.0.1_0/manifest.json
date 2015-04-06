@@ -29,6 +29,7 @@
     // use event page for background
     "persistent": false
   },
+  // Point `newtab` property to our newtab/newtab.html file
   "chrome_url_overrides": {
     "newtab": "newtab/newtab.html"
   },

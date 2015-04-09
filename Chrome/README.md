@@ -49,7 +49,9 @@ Sample extensions, practice code, and general notes and instructions for creatin
 * Select extension project folder.
 
 ###References & Resources
-* https://developer.chrome.com/extensions
-* http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076 (5 Jul 2013)
-* https://robots.thoughtbot.com/how-to-make-a-chrome-extension (23 Jan 2015)
+* [Chrome Documentation](https://developer.chrome.com/extensions)
+* [happi divs tutorial](http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076) (5 Jul 2013)
+* [link-IT! tutorial](https://robots.thoughtbot.com/how-to-make-a-chrome-extension) (23 Jan 2015)
+* [Message passing b/t background.js and popup.js](http://tipstak.blogspot.com/2014/06/how-to-communicate-between-background-and-popup-on-Chrome-extensions.html) (02 Jun 2014)
+* [Message passing from content to popup](http://stackoverflow.com/questions/20019958/chrome-extension-how-to-send-data-from-content-script-to-popup-html) (16 Nov 2013)
 

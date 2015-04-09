@@ -14,6 +14,14 @@ Sample extensions, practice code, and general notes and instructions for creatin
 **Background Pages**
 * Every extension has an invisible background page that is run by browser.
 * Recommendation is to use an event page as a background page, as opposed to a persistent background which is active continually.
+    - Event pages are only loaded when needed, and unloaded when it goes idle again.
+    - Examples of things that cause event page to load:
+        + Install or update of extension
+        + Event page is listening for event and event is dispatched.
+        + A content script or other extension sends a message.
+        + Another view in the extension (like a popup) calls [`runtime.getBackgroundPage`](https://developer.chrome.com/extensions/runtime#method-getBackgroundPage)
+    - Once loaded, event page will run [as long as it is active](https://developer.chrome.com/extensions/event_pages#lifetime).
+    - Event pages [best practices](https://developer.chrome.com/extensions/event_pages#best-practices).
 * Holds extension's main logic and initialization - acts like a bridge between other parts of the extension
 
 **Content Script**
@@ -50,8 +58,8 @@ Sample extensions, practice code, and general notes and instructions for creatin
 
 ###References & Resources
 * [Chrome Documentation](https://developer.chrome.com/extensions)
-* [happi divs tutorial](http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076) (5 Jul 2013)
-* [link-IT! tutorial](https://robots.thoughtbot.com/how-to-make-a-chrome-extension) (23 Jan 2015)
-* [Message passing b/t background.js and popup.js](http://tipstak.blogspot.com/2014/06/how-to-communicate-between-background-and-popup-on-Chrome-extensions.html) (02 Jun 2014)
-* [Message passing from content to popup](http://stackoverflow.com/questions/20019958/chrome-extension-how-to-send-data-from-content-script-to-popup-html) (16 Nov 2013)
+* [happi divs tutorial](http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076) *(5 Jul 2013)*
+* [link-IT! tutorial](https://robots.thoughtbot.com/how-to-make-a-chrome-extension) *(23 Jan 2015)*
+* [Message passing b/t background.js and popup.js](http://tipstak.blogspot.com/2014/06/how-to-communicate-between-background-and-popup-on-Chrome-extensions.html) *(02 Jun 2014)*
+* [Message passing from content to popup](http://stackoverflow.com/questions/20019958/chrome-extension-how-to-send-data-from-content-script-to-popup-html) *(16 Nov 2013)*
 

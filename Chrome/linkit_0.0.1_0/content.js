@@ -33,7 +33,8 @@
 // Listen for message from background.js that indicates we should pull the first URL from the current page
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    if ((request.from === "background") && (request.message === "clicked_browser_action")) {
+    if ((request.from === "background") && (request.message === "active_tab_success")) {
+      // alert('linking-IT!');   // for testing use only
       // Use jQuery to select `a` tag  at `.eq(0)` or first indexed position and store value of `href` property.
       var firstHref = $("a[href^='http'").eq(4).attr("href");
       var activate = window.confirm("link-IT to " + firstHref + "?");

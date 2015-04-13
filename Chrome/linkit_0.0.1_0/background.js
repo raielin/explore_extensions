@@ -1,23 +1,33 @@
 // background.js
 // Send an arbitrary JSON payload to current tab. Chose "message" as key but could be anything.
 
-// Called when user clicks on browser action.
-chrome.browserAction.onClicked.addListener(function(tab) {
-  // Send message to active tab
+// Listen for message from popup.js
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if ((request.from === "popup") && (request.message === "go_link_it")) {
+      // alert("go_link_it!");   // for testing use only
+      getActiveTab();
+    }
+  }
+);
+
+// Called upon receipt of message from popup.js.
+var getActiveTab = function(tab) {
+  // Get active tab
   chrome.tabs.query(
   {
     active: true,
     currentWindow: true
   },
-
+  // Send message to activeTab, to be received by contentscript.js.
   function(tabs) {
     var activeTab = tabs[0];
     chrome.tabs.sendMessage(activeTab.id, {
       from: "background",
-      message: "clicked_browser_action"
+      message: "active_tab_success"
     });
   });
-});
+};
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {

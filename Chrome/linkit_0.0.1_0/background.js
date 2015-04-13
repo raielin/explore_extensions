@@ -13,16 +13,17 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   function(tabs) {
     var activeTab = tabs[0];
     chrome.tabs.sendMessage(activeTab.id, {
-      "message": "clicked_browser_action"
+      from: "background",
+      message: "clicked_browser_action"
     });
   });
 });
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    if (request.message === "open_new_tab") {
+    if ((request.from === "content") && (request.message === "open_new_tab")) {
       chrome.tabs.create({
-        "url": request.url
+        url: request.url
       });
     }
   }

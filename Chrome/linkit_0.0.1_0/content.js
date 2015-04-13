@@ -33,7 +33,7 @@
 // Listen for message from background.js that indicates we should pull the first URL from the current page
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    if (request.message === "clicked_browser_action") {
+    if ((request.from === "background") && (request.message === "clicked_browser_action")) {
       // Use jQuery to select `a` tag  at `.eq(0)` or first indexed position and store value of `href` property.
       var firstHref = $("a[href^='http'").eq(4).attr("href");
       var activate = window.confirm("link-IT to " + firstHref + "?");
@@ -41,8 +41,9 @@ chrome.runtime.onMessage.addListener(
       // If user confirms activation, send message back to background.js to open new tab with URL from current page. Otherwise, cancel and do nothing.
       if (activate) {
         chrome.runtime.sendMessage({
-          "message": "open_new_tab",
-          "url": firstHref
+          from: "content",
+          message: "open_new_tab",
+          url: firstHref
         });
       }
     }

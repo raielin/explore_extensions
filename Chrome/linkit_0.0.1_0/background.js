@@ -29,6 +29,7 @@ var getActiveTab = function(tab) {
   });
 };
 
+// Listen for message from content script to open new browser tab pointing to URL provided by content script.
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if ((request.from === "content") && (request.message === "open_new_tab")) {

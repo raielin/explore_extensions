@@ -1,7 +1,26 @@
 'use strict';
 
 $(document).ready(function() {
+
+  var linksList;
   // alert('go link-IT!');  // for testing use only
+
+  // Find active tab in order to send a message to content script
+  chrome.tabs.query(
+    {
+      active: true,
+      currentWindow: true
+    },
+    // send message to content script in activeTab
+    function(tabs) {
+      var activeTab = tabs[0];
+      chrome.tabs.sendMessage(activeTab.id, {
+        from: "popup",
+        message: "popup_ready"
+      });
+    }
+  );
+
   document.getElementById("button").onclick = function() {
     goLinkIt();
   };

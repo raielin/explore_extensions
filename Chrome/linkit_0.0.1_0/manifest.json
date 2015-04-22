@@ -13,9 +13,10 @@
     "default_title": "link-IT!",
     "default_icon": "icon.png",
     "default_popup": "popup.html"
-  },
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
   }
+  // Deprecate background script when using popup to capture user actions.
+  // "background": {
+  //   "scripts": ["background.js"],
+  //   "persistent": false
+  // }
 }

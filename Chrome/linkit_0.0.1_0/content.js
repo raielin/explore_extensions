@@ -57,7 +57,7 @@
 // Listen for message from popup script that tells content script to scrape DOM for valid URLS
 // TODO: consider possibility of utilizing sendResponse object to handle passing of linksList array?
 
-chrome.runtime.onMessage.addListner(
+chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if ((request.from === "popup") && (request.message === "popup_ready")) {
 

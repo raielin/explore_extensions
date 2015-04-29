@@ -41,7 +41,35 @@ $(document).ready(function() {
 // Function to insert URLs into popup HTML.
 // Takes an array of URLs as a parameter, creates list of URLs in popup view.
 function populateLinksList(urls) {
+  var linksTable = document.getElementById("links");
 
+  // First, clear any values that might exist from prior use.
+  while (linksTable.children.length > 0) {
+    linksTable.removeChild(linksTable.children[linksTable.children.length - 1]);
+  }
+
+  for (var i = 0; i < urls.length; i++) {
+    var row = document.createElement("tr");
+    var col0 = document.createElement("td");
+    var col1 = document.createElement("td");
+    var checkbox = document.createElement("input");
+
+    checkbox.checked = false;
+    checkbox.type = "checkbox";
+    checkbox.id = "check" + i;
+
+    col0.appendChild(checkbox);
+    col1.innerText = urls[i];
+    col1.style.whiteSpace = "nowrap";
+
+    col1.onclick = function() {
+      checkbox.checked = !checkbox.checked;
+    }
+
+    row.appendChild(col0);
+    row.appendChild(col1);
+    linksTable.appendChild(row);
+  }
 }
 
 // send message to background.js to open selected url in new tab

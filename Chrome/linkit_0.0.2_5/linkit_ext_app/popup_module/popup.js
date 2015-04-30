@@ -4,7 +4,6 @@ angular.module('linkIT', []);
 
 $(document).ready(function() {
   $(document).on('click', '#add_link', function() {
-
     chrome.tabs.query({
       active: true,
       currentWindow: true
@@ -13,13 +12,6 @@ $(document).ready(function() {
       var title = tabs[0].title;
       var url = tabs[0].url;
       console.log(title + ': ' + url);
-
-      // var activeTab = tabs[0];
-
-      // chrome.tabs.sendMessage(activeTab.id, {
-      //   from: "popup",
-      //   message: "popup_ready"
-      // });
     });
   });
 });

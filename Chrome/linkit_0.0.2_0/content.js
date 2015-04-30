@@ -1,3 +1,4 @@
+'use strict';
 // content.js
 // NOTE: Do not need to check if document has loaded before running content script. Chrome default injects content scripts only after DOM is complete. (https://developer.chrome.com/extensions/content_scripts#run_at)
 

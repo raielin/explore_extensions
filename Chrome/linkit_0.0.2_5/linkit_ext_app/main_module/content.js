@@ -1,3 +1,5 @@
+'use strict';
+
 // content.js
 
 // ======== VERSION 0.5 ==========

@@ -78,7 +78,7 @@ function getURLS() {
   for (var i = 0; urls.length < 11 && i < 10; i++) {
     var href = $("a[href^='http'").eq(i).attr("href");
 
-    if (href != "undefined") {
+    if (href != undefined) {
       urls.push(href);
     }
   }

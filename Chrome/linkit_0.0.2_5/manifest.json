@@ -7,16 +7,11 @@
   "version": "0.0.1",
   "content_scripts": [{
       "matches": ["<all_urls>"],
-      "js": ["jquery-2.1.3.min.js", "content.js"]
+      "js": ["scripts/jquery-2.1.3.min.js", "scripts/content.js"]
   }],
   "browser_action": {
     "default_title": "link-IT!",
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   }
-  // Deprecate background script when using popup to capture user actions.
-  // "background": {
-  //   "scripts": ["background.js"],
-  //   "persistent": false
-  // }
 }

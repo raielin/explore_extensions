@@ -1,5 +1,7 @@
 'use strict';
 
+angular.module('linkIT', []);
+
 $(document).ready(function() {
   // console.log("document ready!"); // for testing use only.
 

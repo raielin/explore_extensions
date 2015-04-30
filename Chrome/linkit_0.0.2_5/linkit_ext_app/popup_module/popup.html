@@ -5,19 +5,27 @@
   </head>
   <body ng-app="linkIT">
 
-    <div id="main_wrapper">
-      <h2>link-IT!</h2>
-      <table id="links">
+    <div id="main_wrapper" ng-controller="PopupController">
+      <header>
+        <h2>link-IT!</h2>
+      </header>
+
+      <section id="links"></section>
+
+      <!-- Deprecating table for section above -->
+      <!-- <table id="links">
         <tr>
           <td>Sorry! No valid links on this page.</td>
         </tr>
       </table>
-      <button id="button">OK!</button>
+      <button id="button">OK!</button> -->
     </div>
 
     <script src="/bower_components/jquery/jquery.min.js"></script>
     <script src="/bower_components/angular/angular.min.js"></script>
 
     <script src="popup.js"></script>
+    <script src="popup.controller.js"></script>
+    <script src="popup.directive.js"></script>
   </body>
 </html>

@@ -10,7 +10,13 @@
         <h2>link-IT!</h2>
       </header>
 
-      <section id="links"></section>
+      <section id="links">
+      <ul>
+        <li ng-repeat="link in links">
+          <a target="_blank" ng-href="{{link.url}}">{{link.title}}</a>
+        </li>
+      </ul>
+      </section>
 
       <!-- Deprecating table for section above -->
       <!-- <table id="links">

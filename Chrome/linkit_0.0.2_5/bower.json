@@ -1,6 +1,10 @@
 {
-  "name": "daisy-chrome-extension",
-  "version": "0.0.0",
-  "dependencies": {},
+  "name": "linkIT-extension",
+  "version": "0.0.2_5",
+  "dependencies": {
+    "angular": "1.2.6",
+    "jquery": "2.0.3",
+    "normalize.scss": "3.0.0"
+    },
   "devDependencies": {}
 }

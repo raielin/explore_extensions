@@ -3,7 +3,7 @@
 // Used for AngularJS StorageService, but will also need to reuse this class in background script so best to keep it separate.
 var linkITStorageService = function() {
   var lsName = 'links';
-  var data = localStorage.getItem(lsName) ? JSON.parse(localStorage.getItem(lsName)) : [];
+  var data = localStorage.getItem(lsName) ? JSON.parse(loca`lStorage.getItem(lsName)) : [];
   return {
     get: function() {
       return data;

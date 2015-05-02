@@ -14,7 +14,7 @@ angular.module('linkIT').controller('PopupController', function($scope, StorageS
   //   }
   // ];
 
-  var $scope.links = StorageService.get();
+  $scope.links = StorageService.get();
 
   $scope.removeLink = function(url) {
     StorageService.remove(url);

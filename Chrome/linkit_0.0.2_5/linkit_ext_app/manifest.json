@@ -8,10 +8,14 @@
   "permissions": [
     "tabs"
   ],
-  "content_scripts": [{
-      "matches": ["<all_urls>"],
-      "js": ["bower_components/jquery/jquery.min.js", "main_module/content.js"]
-  }],
+  "background": {
+    "scripts": [
+      "bower_components/jquery/jquery.min.js",
+      "storage_module/storage.js",
+      "main_module/background.js"
+    ],
+    "persistent": false
+  },
   "browser_action": {
     "default_title": "link-IT!",
     "default_icon": "assets/icon.png",

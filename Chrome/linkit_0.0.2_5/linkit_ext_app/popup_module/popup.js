@@ -9,9 +9,20 @@ $(document).ready(function() {
       currentWindow: true
     },
     function(tabs) {
-      var title = tabs[0].title;
-      var url = tabs[0].url;
-      console.log(title + ': ' + url);
+      // var title = tabs[0].title;
+      // var url = tabs[0].url;
+      // console.log(title + ': ' + url);  // for testing use
+
+      chrome.extension.sendMessage({
+        from: 'popup',
+        action: 'add',
+        data: {
+          title: tabs[0].title,
+          url: tabs[0].url
+        }
+      });
+
+      alert('Marked!');
     });
   });
 });

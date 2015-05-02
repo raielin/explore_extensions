@@ -9,9 +9,7 @@ $(document).ready(function() {
       currentWindow: true
     },
     function(tabs) {
-      // var title = tabs[0].title;
-      // var url = tabs[0].url;
-      // console.log(title + ': ' + url);  // for testing use
+      // console.log(tabs[0].title + ': ' + tabs[0].url);  // for testing use
 
       chrome.extension.sendMessage({
         from: 'popup',
@@ -21,8 +19,9 @@ $(document).ready(function() {
           url: tabs[0].url
         }
       });
-
-      alert('Marked!');
+      // Reload popup after adding new link.
+      // location.reload() can take a parameter. Default is `false` which means the window reloads from the browser cache; true will reload window from server.
+      location.reload();
     });
   });
 });

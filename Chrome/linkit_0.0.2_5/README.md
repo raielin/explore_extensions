@@ -6,7 +6,6 @@ https://robots.thoughtbot.com/how-to-make-a-chrome-extension
 * Include functionality for user to save links (utilizing HTML5 localStorage).
 * Reference: [Creating a Save Later Extension](http://www.smashingmagazine.com/2014/11/17/creating-save-later-chrome-extension-modern-web-tools/)
 
-
 ###Version 0.0.2_0 Specs
 * A click on extension icon opens popup showing list of first 10 URLs on the active webpage. 
 * User can select one or multiple URLs and then click OK to open selected URL(s) in new tab(s).

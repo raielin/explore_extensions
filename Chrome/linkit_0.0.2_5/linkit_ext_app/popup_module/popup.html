@@ -14,8 +14,10 @@
       <section id="links">
       <ul>
         <li ng-repeat="link in links">
+          <div class="actions">
+            <span class="remove" ng-click="removeLink(link.url)">X</span>
+          </div>
           <a target="_blank" ng-href="{{link.url}}">{{link.title}}</a>
-          <span class="remove" ng-click="removeLink(link.url)">remove</span>
         </li>
       </ul>
       </section>

@@ -12,25 +12,17 @@
       </header>
 
       <section id="links">
-      <ul>
-        <li ng-repeat="link in links">
-          <div class="actions">
-            <span class="remove" ng-click="removeLink(link.url)">X</span>
-          </div>
-          <a target="_blank" ng-href="{{link.url}}">{{link.title}}</a>
-        </li>
-      </ul>
+        <ul>
+          <li ng-repeat="link in links">
+            <div class="actions">
+              <span class="remove" ng-click="removeLink(link.url)">X</span>
+            </div>
+            <a target="_blank" ng-href="{{link.url}}">{{link.title}}</a>
+          </li>
+        </ul>
       </section>
 
       <p id="add_link" class="btn">Add new link...</p>
-
-      <!-- Deprecating table for section above -->
-      <!-- <table id="links">
-        <tr>
-          <td>Sorry! No valid links on this page.</td>
-        </tr>
-      </table>
-      <button id="button">OK!</button> -->
     </div>
 
     <script src="/bower_components/jquery/jquery.min.js"></script>

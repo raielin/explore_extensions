@@ -13,7 +13,8 @@
 
       <section id="links">
         <ul>
-          <li ng-repeat="link in links">
+          <!-- Use `track by` expression to specify unique keys. Fixes ngRepeat:dupes error. https://docs.angularjs.org/error/ngRepeat/dupes -->
+          <li ng-repeat="link in links track by $index">
             <div class="actions">
               <span class="remove" ng-click="removeLink(link.url)">X</span>
             </div>
